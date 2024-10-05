@@ -45,7 +45,7 @@ const Sidebar = () => {
                 <Link to="/Directory">Directory</Link>
               </li>
               <li>
-                <Link to="/Employee-Management">Manage Employee</Link>
+                <Link to="/Employee-Management">Manage Employees</Link>
               </li>
             </ul>
           )}
