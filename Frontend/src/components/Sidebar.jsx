@@ -68,9 +68,8 @@ const Sidebar = () => {
           </li>
           {openDropdown === "recruitment" && (
             <ul className="dropdown-menu">
-              <li>Open Positions</li>
-              <li>Application Status</li>
-              <li>Hiring Reports</li>
+              <li>Job List</li>
+              <li>Candidates</li>
             </ul>
           )}
 
@@ -92,9 +91,9 @@ const Sidebar = () => {
           </li>
           {openDropdown === "performance" && (
             <ul className="dropdown-menu">
-              <li>Performance Reviews</li>
+              {/* <li>Performance Reviews</li>
               <li>Goals</li>
-              <li>Reports</li>
+              <li>Reports</li>*/}
             </ul>
           )}
 
@@ -104,11 +103,7 @@ const Sidebar = () => {
           </li>
           <li className="menu-item">
             <img className="icon" src={trainingIcon} alt="Training Icon" />{" "}
-            Training
-          </li>
-          <li className="menu-item">
-            <img className="icon" src={benefitsIcon} alt="Benefits Icon" />{" "}
-            Benefits & Compensation
+            Projects
           </li>
           <li className="menu-item">
             <img className="icon" src={complianceIcon} alt="Compliance Icon" />{" "}
