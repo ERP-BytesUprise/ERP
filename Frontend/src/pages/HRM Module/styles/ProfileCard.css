@@ -1,0 +1,107 @@
+.profile-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  text-align: center;
+  position: relative;
+  font-weight: 0;
+
+}
+
+.profile-header {
+  background-color: #534FEB;
+  padding: 15px;
+  color: white;
+  border-radius: 6px;
+  height: 110px;
+  margin-bottom: 40px;
+}
+
+.name-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 5px;
+}
+
+.name-status .Name {
+  font-size: 16px;
+  margin-right: 10px;
+  color: black;
+  font-family: "Nunito", sans-serif;
+
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  background-color: #E6F5F0;
+  padding: 1px 4px 2px 4px;
+  border-radius: 2px;
+  font-size: 14px;
+}
+
+
+.role {
+  margin: 0;
+  font-size: 12px;
+  font-family: "Nunito", sans-serif;
+
+}
+
+.profile-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 3px solid white;
+}
+
+.profile-email {
+  font-size: 12px;
+  font-family: "Nunito", sans-serif;
+
+}
+
+.profile-details {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 10px;
+  padding: 5px;
+  font-size: 12px;
+  width: 225px;
+  font-family: "Nunito", sans-serif;
+}
+
+.profile-details img {
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.right {
+  text-align: right;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  color: #455A64;
+}
+
+.status-active {
+  color: #0F9F6E;
+}
+
+.status-inactive {
+  background-color: aliceblue;
+  color: #9F0F0F;
+}

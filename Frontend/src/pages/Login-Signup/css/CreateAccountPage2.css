@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded&display=swap');
+
+/* General layout for larger screens */
+.Gettingcontainer {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+.Gettingtitle {
+    font-size: 40px;
+    margin: 0;
+}
+
+.Gettingform2 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Formdetails2 {
+    padding: 20px;
+    padding-top: 40px;
+    width: 60%;
+}
+
+.formtext {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.Formdetails2 label {
+    font-size: 12px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.Formdetails2 input,
+.Formdetails2 select {
+    margin-top: 5px;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #A1A1A1;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.phone-input-container {
+    display: flex;
+    gap: 10px;
+}
+
+.phone-input-container select {
+    width: 30%;
+}
+
+.phone-input-container input {
+    width: 70%;
+}
+
+
+.Proceed {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.terms {
+    color: #534FEB;
+}
+
+
+.Gettingimagecont img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .Gettingcontainer {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .Gettingform {
+        width: 100%;
+        padding: 20px;
+        height: auto;
+    }
+
+    /* Hide the image on smaller screens */
+    .Gettingimagecont {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    form label {
+        font-size: 14px;
+    }
+
+    form input {
+        padding: 8px;
+    }
+
+    button {
+        padding: 8px;
+    }
+}

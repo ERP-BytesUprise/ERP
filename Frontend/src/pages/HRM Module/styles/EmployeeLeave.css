@@ -1,0 +1,296 @@
+.employee-management {
+    margin-left: 300px;
+    padding: 5px;
+    text-align: left;
+}
+
+.stats-container {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+    height: 160px;
+    margin-bottom: 10px;
+}
+
+.stat-box {
+    width: 340px;
+    background-color: #f3f4f6;
+    padding: 20px;
+    margin-right: 15px;
+    text-align: left;
+    border-radius: 10px;
+}
+
+.stat-box img {
+    border: 2px solid #D9D9D9;
+    border-radius: 5px;
+    padding: 5px;
+    vertical-align: middle;
+}
+
+.stat-box p {
+    font-size: 14px;
+    text-align: left;
+}
+
+.stat-box .count {
+    font-size: 32px;
+    margin: 0;
+    text-align: left;
+    font-weight: 500;
+}
+
+.stat-box span {
+    color: #B6B6B6;
+    font-size: 12px;
+}
+
+.Report {
+    float: right;
+}
+
+.stat-box .highlight {
+    margin: 0;
+    color: #0F9F6E;
+}
+
+.stat-box .Absent {
+    margin: 0;
+    color: #9F0F0F;
+}
+
+.Menu button {
+    margin-top: 10px;
+    background-color: transparent;
+    border: none;
+    padding: 10px 15px 10px 15px;
+    cursor: pointer;
+    position: relative;
+    font-size: 18px;
+    transition: color 0.4s ease;
+    margin-bottom: 10px;
+}
+
+.Menu button::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1.5px;
+    background-color: #A1A1A1;
+}
+
+.Menu button.active {
+    color: #534FEB;
+}
+
+.Menu button.active::after {
+    content: '';
+    position: absolute;
+    border-radius: 5px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #534FEB;
+}
+
+.Menu button:not(.active):hover {
+    color: #777;
+}
+
+.Menu button.active img {
+    filter: invert(27%) sepia(51%) saturate(5925%) hue-rotate(238deg) brightness(99%) contrast(87%);
+}
+
+.Menu button:not(.active):hover img {
+    filter: invert(46%) sepia(12%) saturate(3%) hue-rotate(23deg) brightness(99%) contrast(89%);
+}
+
+.menu-icon {
+    vertical-align: middle;
+    width: 25px;
+    height: 25px;
+    margin-right: 8px;
+    transition: filter 0.5s ease;
+
+}
+
+
+input[type="text"] {
+    padding: 15px 40px;
+    border: 2px solid #B6B6B6;
+    border-radius: 8px;
+
+}
+
+.Bar span {
+    margin-left: 360px;
+}
+
+.export-button {
+    padding: 8px;
+    border: 2px solid #B6B6B6;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 10px;
+    vertical-align: middle;
+    background-color: white;
+}
+
+.export {
+    padding: 10px;
+}
+
+.export-button img {
+    margin-left: 10px;
+    vertical-align: middle;
+    padding: 5px;
+}
+
+.filter-button {
+    background-color: white;
+    padding: 13px;
+    border-radius: 10px;
+    border: 2px solid #B6B6B6;
+    margin-left: 20px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.filter-button img {
+    margin-left: 10px;
+    vertical-align: middle;
+    background-color: white;
+}
+
+.employee-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-weight: 150;
+}
+
+.employee-table th,
+.employee-table td {
+    padding: 20px;
+    text-align: left;
+}
+
+.employee-table thead {
+    background-color: #F5F5F5;
+    font-size: 14px;
+    box-shadow: 0 0 5px #B6B6B6;
+}
+
+.employee-table tbody {
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+
+}
+
+.employee-table tbody tr {
+    border-bottom: 2px solid #B6B6B6;
+
+}
+
+.Type {
+    border-radius: 10px;
+    padding: 10px 0;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.Type-FullTime {
+    background-color: #E6F5F0;
+    border: 2px solid #0F9F6E;
+    color: #0F9F6E;
+}
+
+.Type-PartTime {
+    background-color: #E8F0FC;
+    border: 2px solid #AAC8F5;
+    color: #534FEB;
+}
+
+.Status {
+    padding: 10px 0px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.Approved {
+    background-color: #E6F5F0;
+    border: 2px solid #0F9F6E;
+    color: #0F9F6E;
+}
+
+.Pending {
+    background-color: #FBF5E8;
+    border: 2px solid #EDD59F;
+    color: #D5A127;
+}
+
+.Rejected {
+    background-color: #F5E6E6;
+    border: 2px solid #9F0F0F;
+    color: #9F0F0F;
+}
+
+.Profile {
+    border: 2px solid #B6B6B6;
+    width: 40px;
+    vertical-align: middle;
+    margin-right: 8px;
+    border-radius: 50%;
+}
+
+.Controls {
+    text-align: right;
+}
+
+.Edit-btn {
+    border: 2px solid #A1A1A1;
+    color: #000000;
+    padding: 10px;
+    background-color: F5F5F5;
+    font-size: 14px;
+    font-weight: 549;
+    width: 80px;
+    border-radius: 10px;
+    margin-left: 150px;
+}
+
+.Approved-btn {
+    border: 2px solid #0F9F6E;
+    color: #0F9F6E;
+    background-color: #E6F5F0;
+    margin-right: 20px;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    width: 80px;
+    border-radius: 10px;
+    width: 100px;
+}
+
+.Reject-btn {
+    border: 2px solid #9F0F0F;
+    color: #9F0F0F;
+    background-color: #F5E6E6;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    width: 80px;
+    border-radius: 10px;
+}
+
+.Edit {
+    text-align: right;
+}

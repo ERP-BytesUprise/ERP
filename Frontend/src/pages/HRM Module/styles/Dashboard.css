@@ -1,0 +1,102 @@
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 250px; /* Adjust based on your sidebar width */
+    padding-top: 70px;  /* Adjust based on your navbar height */
+  }
+  
+  .dashboard-content {
+    width: 90%;
+    margin-left: 12px;
+    padding: 40px;
+    background-color: #f4f4f4;
+}
+  
+  /* Metrics styling */
+  .metrics {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .metric-card {
+    background-color: white;
+    margin-left: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    width: 23%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .metric-card h3 {
+    margin: 0;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .metric-card .metric-percentage {
+    margin-top: 5px;
+  }
+  
+  .metric-card .metric-value {
+    font-size: 2rem;
+    margin-top: 10px;
+  }
+  
+  /* Interviews and To-Do Sections */
+  .interviews-section, .todo-section {
+    background-color: white;
+    width: 50%;
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .interviews-header, .todo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .interviews-list, .todo-list {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .interview-card, .todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .interview-details {
+    display: flex;
+    align-items: center;
+  }
+  
+  .avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .see-all {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+  
+  .see-all:hover {
+    text-decoration: underline;
+  }
+  
+  .todo-item input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  

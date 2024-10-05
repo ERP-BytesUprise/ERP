@@ -1,0 +1,116 @@
+.container {
+    background-color: #F5F5F5;
+    border-radius: 10px;
+    padding: 20px;
+    margin-right: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ProjectBtn button {
+    margin-top: 10px;
+    background-color: transparent;
+    border: none;
+    padding: 10px 15px 10px 15px;
+    cursor: pointer;
+    position: relative;
+    font-size: 16px;
+    transition: color 0.4s ease;
+    margin-bottom: 10px;
+}
+
+.ProjectBtn button::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1.5px;
+    background-color: #A1A1A1;
+}
+
+.ProjectBtn button.active {
+    color: #534FEB;
+}
+
+.ProjectBtn button.active::after {
+    content: '';
+    position: absolute;
+    border-radius: 5px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #534FEB;
+}
+
+.ProjectBtn button:not(.active):hover {
+    color: #777;
+}
+
+.ProjectBtn button.active img {
+    filter: invert(27%) sepia(51%) saturate(5925%) hue-rotate(238deg) brightness(99%) contrast(87%);
+}
+
+.ProjectBtn button:not(.active):hover img {
+    filter: invert(46%) sepia(12%) saturate(3%) hue-rotate(23deg) brightness(99%) contrast(89%);
+}
+
+.menu-icon {
+    vertical-align: middle;
+    width: 25px;
+    height: 25px;
+    margin-right: 8px;
+    transition: filter 0.5s ease;
+
+}
+
+.edit-button {
+    float: right;
+    background-color: #534FEB;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.project-section {
+    margin-bottom: 30px;
+}
+
+
+h2 {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+h3 {
+    font-size: 14px;
+    font-weight: 500;
+
+}
+
+/*p {
+    line-height: 10px;
+    font-size: 14px;
+}
+*/
+hr {
+
+    border: 1px solid #A1A1A1;
+    margin: 40px 0;
+}
+
+.team-member {
+    display: inline-block;
+    margin: 5px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.team-member img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
