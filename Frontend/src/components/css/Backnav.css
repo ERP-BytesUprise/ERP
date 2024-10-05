@@ -1,0 +1,17 @@
+.Back {
+    margin-left: 280px;
+    /* Adjust based on your sidebar width */
+    padding-top: 90px;
+}
+
+
+.Back img {
+    width: 20px;
+    cursor: pointer;
+}
+
+.Back button {
+    font-size: 24px;
+    border: none;
+    background-color: white;
+}
