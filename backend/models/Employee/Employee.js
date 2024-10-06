@@ -1,16 +1,10 @@
 const mongoose = require('mongoose');
 
 const employeeSchema = new mongoose.Schema({
+    date: { type: Date, default: Date.now }, // Date the employee record was created
     employeeId: { type: String, required: true, unique: true }, // Employee ID field (e.g. A110001)
     name: { type: String, required: true }, // Employee name (e.g. Jay Vasani)
-    active: { type: Boolean, default: true }, // Whether the employee is active
-    position: { type: String, required: true }, // Position/Role (e.g. Product Designer)
-    photo: { type: String }, // URL of the employee's photo
-    email: { type: String, required: true, unique: true }, // Unique email address
-    location: { type: String }, // Employee location (e.g. Remote)
-    contact: { type: String }, // Contact number
-    birthday: { type: Date }, // Date of birth
-    date: { type: Date, default: Date.now }, // Date the employee record was created
+    role: { type: String, required: true }, // Position/Role (e.g. Product Designer)
     employmentType: { type: String, enum: ['Full Time', 'Part Time'], required: true }, // Full Time or Part Time
     status: { type: String, enum: ['Present', 'Absent', 'Late'], required: true }, // Current status (e.g. Present)
     checkIn: { type: String }, // Check-in time (e.g. "09:00 AM")
