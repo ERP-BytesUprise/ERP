@@ -1,0 +1,87 @@
+.Recuritmentemployees-list {
+    margin-top: 20px;
+    margin-left: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 10px;
+    padding: 15px 5px;
+    border-radius: 10px;
+}
+
+.Recuritment-card {
+    width: 300px;
+    margin-bottom: 20px;
+    background-color: #F5F5F5;
+    border-radius: 10px;
+    padding: 20px;
+    position: relative;
+
+}
+
+.RecuritmentDate {
+    font-size: 14px;
+    border: 2px solid #A1A1A1;
+    padding: 5px;
+    color: #414141;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.Recuritment-status {
+    display: inline-flex;
+}
+
+.Recuritmentstatus {
+    background-color: #E6F5F0;
+    border-radius: 5px;
+    padding: 0 10px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.Recuritmentrole {
+    margin: 0;
+    font-size: 20px;
+    font-family: "Nunito", sans-serif;
+    margin-top: 15px;
+}
+
+.Recuritmentbrief {
+    margin-top: 5px;
+    font-size: 12px;
+    color: #414141;
+}
+
+.Recuritment-details {
+    margin-top: 18px;
+    font-size: 12px;
+    font-family: "Nunito", sans-serif;
+}
+
+.Recuritment-details span {
+    border: 2px solid #A1A1A1;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-right: 8px;
+    color: #414141;
+}
+
+.Recuritment-details .Position {
+    background-color: #E8F0FC;
+    border: 2px solid #AAC8F5;
+    color: #534FEB;
+}
+
+.Recuritmentstatus-active {
+    color: #0F9F6E;
+    border: 2px solid #0F9F6E;
+
+}
+
+.Recuritmentstatus-inactive {
+    background-color: #F5E6E6;
+    border: 2px solid #9F0F0F;
+    color: #9F0F0F;
+}

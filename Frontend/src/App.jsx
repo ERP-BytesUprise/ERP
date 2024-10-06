@@ -25,17 +25,26 @@ import NewPassword from "./pages/Login-Signup/CreateNewPassword.jsx";
 import ResetPasswordEmailSent from "./pages/Login-Signup/ResetPasswordEmailSentMsg.jsx";
 import ProjectSummary from "./pages/HRM Module/ProjectSummary.jsx";
 import ProjectDashboard from "./pages/HRM Module/ProjectDashboard.jsx";
+import ProjectNavbar from "./components/ProjectNavbar.jsx";
+import ProjectTeamMembers from "./pages/HRM Module/ProjectTeamMembers.jsx";
+import ProjectTimeline from "./pages/HRM Module/ProjectTimeline.jsx";
+import ProjectUpdates from "./pages/HRM Module/ProjectUpdates.jsx";
+import CreateNewPassword from "./pages/Login-Signup/CreateNewPassword.jsx";
+import RecruitmentCandidates from "./pages/HRM Module/RecruitmentCandidates.jsx";
+import RecruitmentDashboard from "./pages/HRM Module/RecruitmentDashboard.jsx";
 import "./App.css";
 
 const MainContent = () => {
   const location = useLocation(); // Get the current route
   const routeTitles = {
-    "/": "Home",
-    "/Dashboard": "Dashboard",
+    "/Dasboard": "Dashboard",
     "/Directory": "Directory",
     "/Notification": "Notification",
     "/Employee-Management": "Employee Management",
     "/Leave-Request": "Employee Management",
+    "/Projects": "Projects",
+    "/Candidates": "Candidates",
+    "/Job-List": "Recruitment",
     // Add more routes here as needed
   };
 
@@ -129,11 +138,42 @@ const MainContent = () => {
             </HRMLayout>
           }
         />
+
+        <Route
+          path="/Projects"
+          element={
+            <HRMLayout>
+              <CurrentPage title={getPageTitle()} />
+              <ProjectDashboard />
+            </HRMLayout>
+          }
+        />
+        <Route
+          path="/Candidates"
+          element={
+            <HRMLayout>
+              <CurrentPage title={getPageTitle()} />
+              <RecruitmentCandidates />
+            </HRMLayout>
+          }
+        />
+        <Route
+          path="/Job-List"
+          element={
+            <HRMLayout>
+              <CurrentPage title={getPageTitle()} />
+              <RecruitmentDashboard />
+            </HRMLayout>
+          }
+        />
       </Routes>
-      {/* Add more routes here as needed 
-         <CurrentPage title={getPageTitle()} />
-      <ProjectSummary />*/}
-      \
+
+      <Routes>
+        <Route path="/Project-summary" element={<ProjectSummary />} />
+        <Route path="/Project-team-members" element={<ProjectTeamMembers />} />
+        <Route path="/Project-calendar" element={<ProjectTimeline />} />
+        <Route path="/Project-updates" element={<ProjectUpdates />} />
+      </Routes>
     </>
   );
 };
