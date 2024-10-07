@@ -1,0 +1,235 @@
+/*
+body {
+    margin-left: 220px;
+    max-width: 1200px;
+    padding: 10px;
+  
+    margin-top: 30px;
+   
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+}*/
+
+.calendar {
+    max-height: 5vh;
+    /* Adjusted to a smaller height */
+    width: 100%;
+    margin: 10px auto;
+    /* Reduced margin */
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    /* Reduced margin */
+}
+
+.today-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    /* Reduced padding */
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.date-range {
+    font-size: 1em;
+    /* Reduced font size */
+}
+
+.view-switch button {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 8px;
+    /* Reduced padding */
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 3px;
+    /* Reduced margin */
+}
+
+.view-switch .active {
+    background-color: #007bff;
+    color: white;
+}
+
+.week-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0px;
+    background-color: #fff;
+}
+
+.day-column {
+    background-color: white;
+    border-radius: 8px;
+    /* Reduced border radius */
+    padding: 10px;
+    /* Reduced padding */
+    min-height: 152;
+    /* Reduced min-height */
+    display: flex;
+
+    flex-direction: column;
+}
+
+.day-header {
+    font-size: 1em;
+    /* Reduced font size */
+    margin-bottom: 5px;
+    /* Reduced margin */
+    font-weight: bold;
+    text-align: center;
+}
+
+.day-events {
+    display: flex;
+    flex-direction: column;
+    /* Ensure events stack vertically */
+    flex-grow: 1;
+    gap: 50px;
+    /* Increase gap to create space between cards */
+}
+
+.time-slot {
+    height: 50px;
+    /* Reduced height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    /* Reduced gap */
+    margin: 20px 0;
+    /* Reduced margin */
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    min-width: 152px;
+    /* Reduced min-width */
+    min-height: 3px;
+    /* Reduced min-height */
+}
+
+.empty-slot {
+    margin-top: 40px;
+    border: none;
+    padding: 5px;
+    /* Reduced padding */
+    height: 50px;
+    /* Reduced height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #aaa;
+    min-width: 152px;
+    /* Reduced min-width */
+    min-height: 3px;
+    /* Reduced min-height */
+}
+
+.time-slot.empty-slot {
+    background-color: #f9f9f9;
+}
+
+.event-card {
+    margin: 20px 0;
+    /* Increase top and bottom margin for more space */
+    margin-top: 40px;
+
+    padding: 10px;
+    /* Adjust padding for better content spacing */
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+    border: 2px solid transparent;
+    background-color: inherit;
+    min-width: 152px;
+    /* Maintain min-width */
+    min-height: 80px;
+    /* Set a min-height to avoid collapsing */
+    font-size: 0.8em;
+    /* Font size */
+}
+
+.event-card h3 {
+    margin: 5px 0;
+    /* Reduced space around the title */
+    color: rgb(255, 255, 255);
+    font-size: 1em;
+    /* Adjust this for the title font size */
+}
+
+.event-card span {
+    color: white;
+    font-size: 0.8em;
+    /* Adjust this for the span font size */
+}
+
+
+.event-users {
+    margin-top: 5px;
+    display: flex;
+    gap: 5px;
+}
+
+.user-avatar {
+    width: 20px;
+    /* Reduced size */
+    height: 20px;
+    /* Reduced size */
+    background-color: #ddd;
+    border-radius: 50%;
+}
+
+/* Color class examples */
+.green {
+    background-color: #28a7467b;
+    border-color: #28a745;
+}
+
+.orange {
+    background-color: #ff990066;
+    border-color: #ff9900;
+}
+
+.purple {
+    background-color: #da8be8;
+    border-color: #a84ac4;
+}
+
+.blue {
+    background-color: #2195f36e;
+    border-color: #2196f3;
+}
+
+.yellow {
+    background-color: #ffc10773;
+    border-color: #ffc107;
+}
+
+.brown {
+    background-color: #79554877;
+    border-color: #6d4c41;
+}
+
+.event-custom-text {
+    margin-top: 5px;
+    /* Reduced margin */
+    font-size: 0.9em;
+    /* Reduced font size */
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 5px;
+    border-radius: 3px;
+    text-align: left;
+    width: 100%;
+    box-sizing: border-box;
+}

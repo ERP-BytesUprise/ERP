@@ -1,0 +1,213 @@
+/* General container styling */
+.Reccontainer {
+    padding: 20px;
+    margin-left: 285px;
+    overflow-y: auto;
+    height: 80vh;
+    overflow-x: hidden;
+}
+
+/* Header styling */
+.Recheader {
+    margin-left: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: #F5F5F5;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Header title */
+.Recheader .Candtitle {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Search input */
+.Recheader input {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 1px solid #A1A1A1;
+}
+
+/* Create new job button */
+.Recheader button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #534FEB;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    margin-left: 20px;
+}
+
+/* Flex container for the board */
+.Recboard {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+/* Column styling */
+.Reccolumn {
+    flex: 1;
+    background-color: "#fff";
+    border-radius: 8px;
+    padding: 0 10px;
+}
+
+/* Category header (title and count in the same div) */
+.Reccategory-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 198px;
+    padding: 5px 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* Category heading text */
+.Reccategory-header h3 {
+    font-size: 16px;
+    margin: 0;
+    color: #333;
+}
+
+/* Small square to show count of people in each category */
+.Reccategory-count {
+    color: white;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Specific background colors for each category */
+.Reccolumn.sourced .Reccategory-header {
+    background-color: #FFF0D9;
+    /* light blue */
+}
+
+.Reccolumn.sourced .Reccategory-count {
+    background-color: #FFA50A;
+    /* dodgerblue */
+}
+
+.Reccolumn.in-progress .Reccategory-header {
+    background-color: #DAE5F9;
+    /* light yellow */
+}
+
+.Reccolumn.in-progress .Reccategory-count {
+    background-color: #3872D8;
+    /* dark yellow */
+}
+
+.Reccolumn.interview .Reccategory-header {
+    background-color: #EEDFFE;
+    /* lavender */
+}
+
+.Reccolumn.interview .Reccategory-count {
+    background-color: #9337F2;
+    /* medium purple */
+}
+
+.Reccolumn.hired .Reccategory-header {
+    background-color: #B6EDD6;
+    /* light green */
+}
+
+.Reccolumn.hired .Reccategory-count {
+    background-color: #02A06F;
+    /* lime green */
+}
+
+.Reccolumn.rejected .Reccategory-header {
+    background-color: #FADEDD;
+    /* light red */
+}
+
+.Reccolumn.rejected .Reccategory-count {
+    background-color: #D52D2D;
+    /* tomato red */
+}
+
+/* Card styling */
+.Reccard {
+    background-color: #F5F5F5;
+    border-radius: 8px;
+    margin: 10px 0;
+    padding: 8px;
+    width: 205px;
+    height: 120px;
+    margin-bottom: 15px;
+}
+
+/* Card header (profile image and info) */
+.Reccard-header {
+    display: flex;
+    align-items: center;
+}
+
+.Recprofile-image {
+    margin-top: 10px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.card-info {
+    margin-left: 10px;
+}
+
+.card-info .name {
+    font-size: 16px;
+    margin: 0;
+    margin-top: 5px;
+}
+
+.card-info .email {
+    font-size: 14px;
+    margin: 0;
+    margin-top: 4px;
+    color: #777;
+}
+
+hr {
+    margin-top: 30px;
+    background-color: #A1A1A1;
+
+}
+
+/* Card footer (LinkedIn link and number) */
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.card-footer a {
+    text-decoration: none;
+    color: #A1A1A1;
+
+}
+
+.card-footer img {
+    vertical-align: bottom;
+    margin-right: 3px;
+}
+
+.card-footer span {
+    font-weight: bold;
+    font-size: 16px;
+    color: #A1A1A1;
+}

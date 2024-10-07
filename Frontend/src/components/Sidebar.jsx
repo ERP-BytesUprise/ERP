@@ -68,8 +68,12 @@ const Sidebar = () => {
           </li>
           {openDropdown === "recruitment" && (
             <ul className="dropdown-menu">
-              <li>Job List</li>
-              <li>Candidates</li>
+              <Link to="/Job-List">
+                <li>Job List</li>
+              </Link>
+              <Link to="/Candidates">
+                <li>Candidates</li>
+              </Link>
             </ul>
           )}
 
@@ -101,10 +105,12 @@ const Sidebar = () => {
             <img className="icon" src={payrollIcon} alt="Payroll Icon" />{" "}
             Payroll
           </li>
-          <li className="menu-item">
-            <img className="icon" src={trainingIcon} alt="Training Icon" />{" "}
-            Projects
-          </li>
+          <Link to="/Projects">
+            <li className="menu-item">
+              <img className="icon" src={trainingIcon} alt="Training Icon" />{" "}
+              Projects
+            </li>
+          </Link>
           <li className="menu-item">
             <img className="icon" src={complianceIcon} alt="Compliance Icon" />{" "}
             Compliance & Reporting
