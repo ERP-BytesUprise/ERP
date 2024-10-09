@@ -5,6 +5,7 @@ import SummaryIcon from "../assets/icons/Summary List.png";
 import UpdateIcon from "../assets/icons/Import File.png";
 import CalenderIcon from "../assets/icons/calendar 1.png";
 import UserIcon from "../assets/icons/User Groups.png";
+import SettingIcon from "../assets/icons/Settings.png";
 
 const ProjectNavbar = () => {
   // Get the current URL path
@@ -12,13 +13,14 @@ const ProjectNavbar = () => {
 
   // Determine which menu item is active based on the current path
   const activeMenu = location.pathname;
+  console.log(activeMenu);
 
   return (
     <div className="ProjectBtn">
       <Link to="/Project-summary">
         <button
           className={`Summary ${
-            activeMenu === "/Project-summary" ? "active" : ""
+            activeMenu.startsWith("/Project-summary") ? "active" : ""
           }`}
         >
           <img src={SummaryIcon} alt="Manage Employee" className="menu-icon" />
@@ -51,13 +53,21 @@ const ProjectNavbar = () => {
       <Link to="/Project-updates">
         <button
           className={`Update ${
-            activeMenu === "/Project-updates" ? "active" : ""
+            activeMenu === "/Project-updates" || activeMenu === "/Project-Files"
+              ? "active"
+              : ""
           }`}
         >
           <img src={UpdateIcon} alt="Request Time Off" className="menu-icon" />
           <span>Updates</span>
         </button>
       </Link>
+      <div className="Projectstg">
+        <Link to="/Project-Settings">
+          <img src={SettingIcon} alt="Manage Employee" />
+          <span>Project Settings</span>
+        </Link>
+      </div>
     </div>
   );
 };

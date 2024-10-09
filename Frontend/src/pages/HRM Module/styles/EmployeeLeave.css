@@ -117,14 +117,6 @@
 
 }
 
-
-input[type="text"] {
-    padding: 15px 40px;
-    border: 2px solid #B6B6B6;
-    border-radius: 8px;
-
-}
-
 .Bar span {
     margin-left: 360px;
 }
@@ -150,7 +142,7 @@ input[type="text"] {
     padding: 5px;
 }
 
-.filter-button {
+.Employfilter {
     background-color: white;
     padding: 13px;
     border-radius: 10px;
@@ -160,7 +152,7 @@ input[type="text"] {
     cursor: pointer;
 }
 
-.filter-button img {
+.Employfilter img {
     margin-left: 10px;
     vertical-align: middle;
     background-color: white;
