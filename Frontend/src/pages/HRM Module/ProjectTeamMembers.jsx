@@ -1,6 +1,7 @@
 import React from "react";
 import "./styles/ProjectTeamMembers.css";
 import ProjectNavbar from "../../components/ProjectNavbar";
+import Side from "../../components/ProjectSidebar";
 
 // EmployeeTable component for rendering each section
 const EmployeeTable = ({ sectionTitle, employees, colorClass }) => {
@@ -139,7 +140,6 @@ const ProjectTeamMembers = () => {
 
   return (
     <>
-      <ProjectNavbar />
       <div className="ProjectCont">
         {sections.map((section, index) => (
           <EmployeeTable

@@ -1,0 +1,41 @@
+.JobSummary {
+    margin-left: 300px;
+}
+
+.JobSummary h3 {
+    margin: 0;
+}
+
+.Jobleft {
+    width: 60%;
+    margin-left: 20px;
+    float: left;
+}
+
+.Jobright {
+    width: 30%;
+    float: right;
+    padding: 20px;
+    margin-top: 10px;
+    background-color: #F5F5F5;
+    box-sizing: border-box;
+    margin-right: 20px;
+    border-radius: 10px;
+}
+
+.JobTag {
+    font-size: 20px;
+    margin: 0;
+    color: #A1A1A1;
+}
+
+.JobLine {
+    border: 1px solid #A1A1A1;
+}
+
+.JobData {
+    font-size: 24px;
+    margin: 0;
+    font-weight: 450;
+    margin-bottom: 15px;
+}

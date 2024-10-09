@@ -117,15 +117,17 @@
 }
 
 
-input[type="text"] {
+.EmployeeSearch {
   padding: 15px 40px;
   border: 2px solid #B6B6B6;
   border-radius: 8px;
-
 }
 
-.Bar span {
-  margin-left: 360px;
+
+.Bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .export-button {

@@ -1,6 +1,7 @@
 import "./styles/ProjectTimeline.css";
 import ProjectNavbar from "../../components/ProjectNavbar";
 import React from "react";
+import Side from "../../components/ProjectSidebar";
 
 const ProjectTimeline = () => {
   const events = [
@@ -122,7 +123,6 @@ const ProjectTimeline = () => {
 
   return (
     <>
-      <ProjectNavbar />
       <div className="calendar">
         <div className="calendar-header">
           <button className="today-btn">Today</button>
@@ -172,9 +172,6 @@ const ProjectTimeline = () => {
                                   className="user-avatar"
                                 />
                               ))}
-                            </div>
-                            <div className="event-custom-text">
-                              Custom text here
                             </div>
                           </div>
                         ))

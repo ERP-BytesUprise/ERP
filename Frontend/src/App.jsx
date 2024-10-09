@@ -32,12 +32,21 @@ import ProjectUpdates from "./pages/HRM Module/ProjectUpdates.jsx";
 import CreateNewPassword from "./pages/Login-Signup/CreateNewPassword.jsx";
 import RecruitmentCandidates from "./pages/HRM Module/RecruitmentCandidates.jsx";
 import RecruitmentDashboard from "./pages/HRM Module/RecruitmentDashboard.jsx";
+import RecruitmentForm from "./pages/HRM Module/RecruitmentForm.jsx";
+import JobSummary from "./pages/HRM Module/JobSummary.jsx";
+import UpdatesFiles from "./components/UpdatesFiles.jsx";
+import ProjectFiles from "./pages/HRM Module/ProjectFiles.jsx";
+import ProjectSidebar from "./components/ProjectSidebar.jsx";
+import ProjectSettings from "./pages/HRM Module/ProjectSettings.jsx";
+
 import "./App.css";
+import Payroll from "./pages/HRM Module/Payroll.jsx";
+import ChatComponent from "./pages/HRM Module/Message.jsx";
 
 const MainContent = () => {
   const location = useLocation(); // Get the current route
   const routeTitles = {
-    "/Dasboard": "Dashboard",
+    "/Dashboard": "Dashboard",
     "/Directory": "Directory",
     "/Notification": "Notification",
     "/Employee-Management": "Employee Management",
@@ -45,6 +54,14 @@ const MainContent = () => {
     "/Projects": "Projects",
     "/Candidates": "Candidates",
     "/Job-List": "Recruitment",
+    "/Job-Description": "Job Description",
+    "/Project-summary": "Project Summary",
+    "/Project-team-members": "Project Team Members",
+    "/Project-calendar": "Project Calendar",
+    "/Project-updates": "Project Updates",
+    "/Project-Files": "Project Files",
+    "/Payroll": "Payroll",
+    "/Messages": "Messages",
     // Add more routes here as needed
   };
 
@@ -56,6 +73,17 @@ const MainContent = () => {
     <>
       <HomeNavbar />
       {children}
+    </>
+  );
+  const NavbarLayout = ({ children }) => (
+    <>
+      <div className="app-container">
+        <ProjectSidebar />
+        <CurrentPage title={getPageTitle()} />
+        <Navbar />
+        <ProjectNavbar />
+        <div className="page-content">{children}</div>
+      </div>
     </>
   );
 
@@ -94,7 +122,6 @@ const MainContent = () => {
           path="/Dashboard"
           element={
             <HRMLayout>
-              <CurrentPage title={getPageTitle()} />
               <Dashboard />
             </HRMLayout>
           }
@@ -138,6 +165,15 @@ const MainContent = () => {
             </HRMLayout>
           }
         />
+        <Route
+          path="/Messages"
+          element={
+            <HRMLayout>
+              <CurrentPage title={getPageTitle()} />
+              <ChatComponent />
+            </HRMLayout>
+          }
+        />
 
         <Route
           path="/Projects"
@@ -166,13 +202,76 @@ const MainContent = () => {
             </HRMLayout>
           }
         />
+        <Route
+          path="/Job-Description/:id"
+          element={
+            <HRMLayout>
+              <CurrentPage title={getPageTitle()} />
+              <JobSummary />
+            </HRMLayout>
+          }
+        />
       </Routes>
 
       <Routes>
-        <Route path="/Project-summary" element={<ProjectSummary />} />
-        <Route path="/Project-team-members" element={<ProjectTeamMembers />} />
-        <Route path="/Project-calendar" element={<ProjectTimeline />} />
-        <Route path="/Project-updates" element={<ProjectUpdates />} />
+        <Route
+          path="/Project-summary/:id"
+          element={
+            <NavbarLayout>
+              <ProjectSummary />
+            </NavbarLayout>
+          }
+        />
+        <Route
+          path="/Project-team-members"
+          element={
+            <NavbarLayout>
+              <ProjectTeamMembers />
+            </NavbarLayout>
+          }
+        />
+        <Route
+          path="/Project-calendar"
+          element={
+            <NavbarLayout>
+              <ProjectTimeline />
+            </NavbarLayout>
+          }
+        />
+        <Route
+          path="/Project-updates"
+          element={
+            <NavbarLayout>
+              <ProjectUpdates />
+            </NavbarLayout>
+          }
+        />
+        <Route
+          path="/Project-Files"
+          element={
+            <NavbarLayout>
+              <ProjectFiles />
+            </NavbarLayout>
+          }
+        />
+
+        <Route
+          path="/Project-Settings"
+          element={
+            <NavbarLayout>
+              <ProjectSettings />
+            </NavbarLayout>
+          }
+        />
+        <Route
+          path="/Payroll"
+          element={
+            <HRMLayout>
+              <CurrentPage title={getPageTitle()} />
+              <Payroll />
+            </HRMLayout>
+          }
+        />
       </Routes>
     </>
   );

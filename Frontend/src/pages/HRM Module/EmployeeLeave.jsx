@@ -136,10 +136,11 @@ const EmployeeManagement = () => {
 
         <div className="Bar">
           <input
+            className="EmployeeSearch"
             type="text"
             placeholder="Search by name, role, department..."
           />
-          <button className="filter-button">
+          <button className="Employfilter">
             Filter
             <img src={Filtericon} />
           </button>

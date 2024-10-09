@@ -4,7 +4,7 @@
   margin-bottom: 10px;
   width: 240px;
   height: 90vh;
-  background-color: #f5f5f7;
+  background-color: #f5f5f5;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -18,8 +18,8 @@
 }
 
 .menu-list {
-  list-style: none;
   padding: 0;
+
 }
 
 .menu-list li {
@@ -27,17 +27,109 @@
   align-items: center;
   padding: 10px 0;
   cursor: pointer;
-  color: #4a4a4a;
+  color: #000000;
   font-size: 16px;
 }
 
-.menu-list li:hover {
-  background-color: #e0e0e0;
+
+/* Active item styling */
+.menu-item.active {
+  background-color: #534FEB;
+  border-radius: 10px;
+  color: white;
+}
+
+.active .icon {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+
+}
+
+.activeback li {
+  background-color: #534FEB;
+  border-radius: 10px;
+  color: white;
+}
+
+.activeback .icon {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+
+}
+
+.dropdown-menu .active::before {
+  content: '';
+  position: absolute;
+  left: -30px;
+  top: 50%;
+  transform: translateY(-40%);
+  width: 15px;
+  height: 15px;
+  background-color: #534FEB;
+  border-radius: 50%;
+}
+
+.dropdown-menu .active {
+  position: relative;
+  color: #534FEB;
+  font-weight: 500;
+}
+
+.dropdown-menu li.active {
+  color: #534FEB;
+}
+
+.menu-item {
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.menu-item:not(.activeback):hover {
+  background-color: #E2E8F0;
+}
+
+.menu-item:not(.active):hover {
+  background-color: #E2E8F0;
+}
+
+.dropdown-icon {
+  margin-left: auto;
+  transition: transform 0.3s;
+}
+
+.dropdown-menu {
+
+  padding-left: 50px;
+  position: relative;
+}
+
+
+
+
+.menu-item .dropdown-icon {
+  width: 200px;
+  display: flex;
+}
+
+.menu-item span {
+  display: flex;
+  align-items: center;
+}
+
+.menu-list li:not(.activeback):hover {
+  background-color: #cbcbcb;
+  color: #000000;
   border-radius: 5px;
+}
+
+
+.dropdown-icons {
+  margin-right: 100px;
 }
 
 .icon {
   margin-right: 10px;
+  padding-left: 10px;
+
 }
 
 .footer ul {
@@ -47,6 +139,7 @@
 
 .footer ul li {
   display: flex;
+  width: 240px;
   align-items: center;
   padding: 10px 0;
   cursor: pointer;
@@ -55,6 +148,18 @@
 }
 
 .footer ul li:hover {
-  background-color: #e0e0e0;
+
+  background-color: #cbcbcb;
   border-radius: 5px;
+}
+
+.ProjectSideLogo {
+  width: 30px;
+  margin-right: 15px;
+  font-size: 2px;
+}
+
+.ProjectFont p {
+  margin: 0;
+  font-size: 20px;
 }

@@ -124,13 +124,13 @@ const NotificationDashboard = () => {
 
   return (
     <div className="dashboard-Notification">
-      <div className="header">
-        <div className="content">
+      <div className="Notificationheader">
+        <div className="Notificationcontent">
           <div className="bell-icon">
             <img src={Alarm} alt="bell" /> {/* Bell icon */}
           </div>
           <div className="Notification-text">
-            <p className="PushHeader">Push Notification</p>{" "}
+            <p className="NotificationPushHeader">Push Notification</p>{" "}
             <p className="mark-all-button" onClick={markAllAsRead}>
               Mark all as read
             </p>
@@ -151,14 +151,14 @@ const NotificationDashboard = () => {
       <div className="notifications-list">
         {notifications.map((notification) => (
           <div key={notification.id} className="notification-item">
-            <div className="user-info">
-              <div className="user-avatar">
+            <div className="Notificationuser-info">
+              <div className="Notificationuser-avatar">
                 <img
                   src={`https://i.pravatar.cc/150?img=${notification.id}`}
                   alt={notification.name}
                 />
               </div>
-              <div className="user-details">
+              <div className="Notificationuser-details">
                 <h4>{notification.name}</h4>
                 <p className="rolee">{notification.role}</p>
               </div>

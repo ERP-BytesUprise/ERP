@@ -7,8 +7,8 @@ const Breadcrumb = () => {
   const pathnames = location.pathname.split("/").filter((x) => x);
   return (
     <span className="breadcrumb">
-      <Link to="/" className="prev">
-        Home
+      <Link to="/Dashboard" className="prev">
+        Dashboard
       </Link>
 
       {pathnames.map((value, index) => {

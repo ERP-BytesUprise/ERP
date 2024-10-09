@@ -1,5 +1,5 @@
 .ProjectBtn {
-    margin-left: 300px;
+    margin-left: 320px;
 }
 
 .ProjectBtn button {
@@ -26,6 +26,21 @@
 
 .ProjectBtn button.active {
     color: #534FEB;
+}
+
+.Projectstg {
+    display: inline;
+    float: right;
+    padding: 25px;
+}
+
+.Projectstg span {
+    color: #000000;
+}
+
+.Projectstg img {
+    vertical-align: middle;
+    margin-right: 5px;
 }
 
 .ProjectBtn button.active::after {

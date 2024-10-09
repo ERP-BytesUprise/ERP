@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./css/Navbar.css"; // Import your custom CSS for styling
 import logo from "../assets/icons/logo.png";
 import settingsIcon from "../assets/icons/Settings.png";
@@ -16,24 +16,20 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <img src={logo} alt="Logo" /> {/* Add your logo image path */}
+        <NavLink to="/Dashboard">
+          <img src={logo} alt="Logo" /> {/* Add your logo image path */}
+        </NavLink>
       </div>
-
-      {/*<button className="navbar-toggler" onClick={toggleMenu}>
-         <i className="fas fa-bars"></i> Hamburger icon 
-      </button>
-      */}
-
       <div className={`navbar-icons ${isMenuOpen ? "open" : ""}`}>
         <a href="#settings" className="icon">
           <img src={settingsIcon} alt="Settings" />
         </a>
-        <Link to="/Notification" className="icon">
+        <NavLink to="/Notification" className="icon">
           <img src={bellIcon} alt="Notifications" />
-        </Link>
-        <a href="#mail" className="icon">
+        </NavLink>
+        <NavLink to="/Messages" className="icon">
           <img src={mailIcon} alt="Mail" />
-        </a>
+        </NavLink>
         <a href="#user" className="icon">
           <i className="fas fa-user-circle"></i>
         </a>

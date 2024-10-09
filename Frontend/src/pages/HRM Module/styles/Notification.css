@@ -4,12 +4,12 @@
     border-radius: 8px;
 }
 
-.PushHeader {
+.NotificationPushHeader {
     font-size: 24px;
     margin: 0;
 }
 
-.header {
+.Notificationheader {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -24,7 +24,7 @@
     margin-left: 10px;
 }
 
-.content {
+.Notificationcontent {
     display: flex;
     align-items: center;
     margin-left: 5px;
@@ -118,26 +118,26 @@ input:checked+.slider:before {
     border: 1px solid #A1A1A1;
 }
 
-.user-info {
+.Notificationuser-info {
     display: flex;
     align-items: center;
     width: 85%;
 }
 
-.user-avatar img {
+.Notificationuser-avatar img {
     width: 50px;
     height: 50px;
     border-radius: 50%;
     margin-right: 15px;
 }
 
-.user-details h4 {
+.Notificationuser-details h4 {
     margin: 0;
     font-size: 16px;
     font-weight: 500;
 }
 
-.user-details p {
+.Notificationuser-details p {
     margin: 0;
     font-size: 14px;
     color: #A1A1A1;

@@ -193,27 +193,32 @@ const EmployeeManagement = () => {
         </div>
 
         <div className="Bar">
-          <input
-            type="text"
-            placeholder="Search by name, role, department..."
-          />
-          <button className="filter-button">
-            Filter
-            <img src={Filtericon} />
-          </button>
-          <span>
-            <button className="export-button export">
-              All Departments
-              <img src={Arrowicon} />
+          <div>
+            <input
+              className="EmployeeSearch"
+              type="text"
+              placeholder="Search by name, role, department..."
+            />
+            <button className="Employfilter">
+              Filter
+              <img src={Filtericon} />
             </button>
-            <button className="export-button">
-              <img src={Dateicon} />
-            </button>
-            <button className="export-button">
-              Export CSV
-              <img src={Exporticon} />
-            </button>
-          </span>
+          </div>
+          <div>
+            <span>
+              <button className="export-button export">
+                All Departments
+                <img src={Arrowicon} />
+              </button>
+              <button className="export-button">
+                <img src={Dateicon} />
+              </button>
+              <button className="export-button">
+                Export CSV
+                <img src={Exporticon} />
+              </button>
+            </span>
+          </div>
         </div>
 
         <table className="employee-table">

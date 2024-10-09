@@ -1,28 +1,14 @@
-/*
-body {
-    margin-left: 220px;
-    max-width: 1200px;
-    padding: 10px;
-  
-    margin-top: 30px;
-   
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f9;
-}*/
-
 .calendar {
     max-height: 5vh;
-    /* Adjusted to a smaller height */
-    width: 100%;
-    margin: 10px auto;
-    /* Reduced margin */
+    margin-left: 320px;
+    margin-right: 10px;
 }
 
 .calendar-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     /* Reduced margin */
 }
 
@@ -60,11 +46,12 @@ body {
 .week-grid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    gap: 0px;
+    gap: 2px;
     background-color: #fff;
 }
 
 .day-column {
+    width: 100px;
     background-color: white;
     border-radius: 8px;
     /* Reduced border radius */
@@ -73,14 +60,13 @@ body {
     min-height: 152;
     /* Reduced min-height */
     display: flex;
-
     flex-direction: column;
 }
 
 .day-header {
     font-size: 1em;
     /* Reduced font size */
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     /* Reduced margin */
     font-weight: bold;
     text-align: center;
@@ -91,6 +77,7 @@ body {
     flex-direction: column;
     /* Ensure events stack vertically */
     flex-grow: 1;
+
     gap: 50px;
     /* Increase gap to create space between cards */
 }
@@ -136,9 +123,7 @@ body {
 
 .event-card {
     margin: 20px 0;
-    /* Increase top and bottom margin for more space */
     margin-top: 40px;
-
     padding: 10px;
     /* Adjust padding for better content spacing */
     border-radius: 5px;
@@ -151,10 +136,8 @@ body {
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
     border: 2px solid transparent;
     background-color: inherit;
-    min-width: 152px;
-    /* Maintain min-width */
+    min-width: 120px;
     min-height: 80px;
-    /* Set a min-height to avoid collapsing */
     font-size: 0.8em;
     /* Font size */
 }

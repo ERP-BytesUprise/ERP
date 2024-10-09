@@ -1,0 +1,341 @@
+.update-box {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px 0;
+    border-radius: 10px;
+}
+
+.update-box .quill {
+    border: 2px solid #3b82f6;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    min-height: 100px;
+}
+
+.update-box textarea {
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 2px solid #3b82f6;
+    outline: none;
+    resize: none;
+}
+
+.update-box button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.updates-containers {
+    width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.content {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    /* Added margin to separate the update box and content */
+}
+
+.update {
+    border: 2px solid #A1A1A1;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.collapsed-text {
+    border: 3px solid #534feb;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    cursor: text;
+    padding: 10px;
+    min-height: 30px;
+
+}
+
+.write-update.expanded {
+    width: 100%;
+}
+
+.update-input {
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #A1A1A1;
+    /* Border for the input */
+    border-radius: 8px;
+    /* Rounded corners */
+    font-size: 16px;
+    box-shadow: none;
+    /* Remove shadow for clean appearance */
+}
+
+.update-expanded-content {
+    margin-top: 10px;
+}
+
+/* Fixed Textarea Styles */
+.expanded-textarea,
+.reply-textarea {
+    width: calc(100% - 20px);
+    /* Subtract padding from width to fit within border */
+    min-height: 200px;
+    /* Fixed height */
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #A1A1A1;
+    /* Border for the textarea */
+    overflow: auto;
+    /* Add scroll for overflow content */
+    resize: none;
+    /* Disable manual resizing */
+    margin: 0;
+    /* Remove any margin */
+}
+
+.expanded-textarea:focus,
+.reply-textarea:focus {
+    border-color: #534feb;
+    /* Change border color on focus */
+    outline: none;
+    /* Remove default outline */
+}
+
+.formatting-options {
+    display: flex;
+    /* Use flexbox for layout */
+    justify-content: flex-end;
+    /* Align buttons to the right */
+    margin-top: 10px;
+    /* Add spacing above the buttons */
+}
+
+.add-file,
+.emoji,
+.mention {
+    display: flex;
+    align-items: center;
+    /* Center icons and text */
+    background-color: transparent;
+    /* No background color */
+    border: none;
+    /* No border */
+    margin-right: 10px;
+    /* Space between buttons */
+    cursor: pointer;
+    /* Pointer on hover */
+}
+
+.add-file img,
+.emoji img,
+.mention img {
+    width: 16px;
+    /* Size of icons */
+    height: 16px;
+    /* Size of icons */
+    margin-right: 5px;
+    /* Space between icon and text */
+}
+
+/* Update button styling */
+.submit-update {
+    background-color: #534feb;
+    /* Background color for the update button */
+    color: white;
+    /* Text color */
+    padding: 5px 10px;
+    /* Padding for better spacing */
+    border: none;
+    /* Remove border */
+    border-radius: 8px;
+    /* Rounded corners */
+    cursor: pointer;
+    /* Pointer on hover */
+}
+
+.submit-update:hover {
+    background-color: #0056b3;
+    /* Darker blue on hover */
+}
+
+.update {
+    border: 2px solid #A1A1A1;
+    /* Border for update section */
+    border-radius: 10px;
+    /* Rounded corners */
+    margin-bottom: 20px;
+    /* Space between updates */
+    padding: 20px;
+    /* Padding inside update box */
+    background-color: #f4f4f4;
+    /* White background */
+}
+
+.ql-container {
+    min-height: 100px;
+}
+
+.update-header {
+    display: flex;
+    /* Flexbox for header layout */
+    justify-content: space-between;
+    /* Space between user info and meta */
+    align-items: center;
+    /* Center items vertically */
+}
+
+.user-info {
+    display: flex;
+    /* Flexbox for user info layout */
+    align-items: center;
+    /* Center items vertically */
+}
+
+.Updateavatar {
+    border-radius: 50%;
+    /* Circular avatar */
+    width: 30px;
+    /* Avatar size */
+    height: 30px;
+    /* Avatar size */
+    margin-right: 10px;
+    /* Space between avatar and name */
+}
+
+.update-meta {
+    display: flex;
+    /* Flexbox for meta layout */
+    align-items: center;
+    /* Center items vertically */
+}
+
+.update-meta .icon {
+    width: 16px;
+    /* Icon size */
+    height: 16px;
+    /* Icon size */
+    margin-right: 5px;
+    /* Space between icons */
+}
+
+.update-meta .options {
+    margin-left: 10px;
+    /* Space for options */
+}
+
+.update-content {
+    margin-top: 30px;
+    /* Space between content and header */
+}
+
+.update-content a {
+    color: #534feb;
+    /* Link color */
+    text-decoration: none;
+    /* No underline */
+    word-break: break-all;
+    /* Break long words */
+}
+
+.update-actions {
+    display: flex;
+    /* Use flexbox for action layout */
+    justify-content: flex-start;
+    /* Align buttons to the start */
+    margin-top: 50px;
+    /* Space between actions and content */
+}
+
+.like-button,
+.reply-button {
+    background-color: transparent;
+    /* White background */
+    border: 1px solid #ccc;
+    /* Gray border */
+    padding: 10px;
+    /* Padding for buttons */
+    cursor: pointer;
+    /* Pointer on hover */
+    align-items: center;
+    /* Center items vertically */
+    border-radius: 5px;
+    /* Slightly rounded corners */
+    flex: 1;
+    /* Allow buttons to take equal space */
+    margin-right: -1px;
+    /* Remove the gap between buttons */
+}
+
+.like-button:hover,
+.reply-button:hover {
+    background-color: #f0f0f0;
+    /* Light gray background on hover */
+}
+
+.reply-button {
+    margin-right: 0;
+    /* No margin on the right */
+}
+
+.reply-section {
+    margin-top: 10px;
+    /* Space between reply section and actions */
+}
+
+.reply-actions {
+    margin-top: 5px;
+    /* Space above reply actions */
+}
+
+.submit-reply {
+    background-color: #534feb;
+    /* Background color for reply button */
+    color: white;
+    /* Text color */
+    padding: 5px 10px;
+    /* Padding for better spacing */
+    border: none;
+    /* No border */
+    border-radius: 4px;
+    /* Rounded corners */
+    cursor: pointer;
+    /* Pointer on hover */
+}
+
+.submit-reply:hover {
+    background-color: #0056b3;
+    /* Darker blue on hover */
+}
+
+.files-tab {
+    text-align: center;
+    /* Center text for files tab */
+    padding: 20px;
+    /* Padding for files tab */
+    border: 1px solid #ccc;
+    /* Border for files tab */
+    border-radius: 8px;
+    /* Rounded corners */
+    background-color: #fff;
+    /* White background */
+}
+
+
+.collapsed-text.placeholder:empty::before {
+    content: "Write an update...";
+    color: #999;
+    font-style: italic;
+}
