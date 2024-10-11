@@ -1,3 +1,4 @@
+// backend/models/Directory/directory.js
 const mongoose = require('mongoose');
 
 const directorySchema = new mongoose.Schema({
@@ -7,13 +8,20 @@ const directorySchema = new mongoose.Schema({
         ref: 'Employee' 
     },
     status: { 
-        type: String, 
+        type: String,  
         enum: ['Active', 'Inactive'], 
         required: true 
     },
-    position: { type: String, required: true }, // Position
-    photo: { type: String }, // Photo URL or path
-    email: { type: String, required: true }, // Email
+    photo: { 
+        type: String, // Photo URL
+    },
+    photo_public_id: { 
+        type: String, // Cloudinary public ID
+    },
+    email: { 
+        type: String, 
+        required: true 
+    }, // Email
     location: { type: String }, // Location
     contact: { type: String }, // Contact number
     birthday: { type: Date }, // Birthday

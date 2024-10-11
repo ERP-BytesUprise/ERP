@@ -1,6 +1,23 @@
+// backend/routes/directory.js
 const express = require('express');
 const router = express.Router();
 const Directory = require('../models/Directory/directory'); // Import Directory model
+const multer = require('multer');
+const { CloudinaryStorage } = require('multer-storage-cloudinary');
+const cloudinary = require('../config/cloudinary'); // Import Cloudinary configuration
+
+// Configure Cloudinary Storage for Multer
+const storage = new CloudinaryStorage({
+    cloudinary: cloudinary,
+    params: {
+        folder: 'directory_photos', // Folder name in Cloudinary
+        allowed_formats: ['jpg', 'jpeg', 'png'],
+        transformation: [{ width: 500, height: 500, crop: 'limit' }], // Optional transformations
+    },
+});
+
+// Initialize Multer with Cloudinary Storage
+const upload = multer({ storage });
 
 // GET all directory entries
 router.get('/', async (req, res) => {
@@ -8,7 +25,8 @@ router.get('/', async (req, res) => {
         const directories = await Directory.find().populate('employeeId', 'name email'); // Populate employeeId with name and email
         res.status(200).json(directories);
     } catch (error) {
-        res.status(500).json({ message: error.message });
+        console.error('GET /directory error:', error);
+        res.status(500).json({ message: 'Server Error' });
     }
 });
 
@@ -19,31 +37,99 @@ router.get('/:id', async (req, res) => {
         if (!directory) return res.status(404).json({ message: 'Directory entry not found' });
         res.status(200).json(directory);
     } catch (error) {
-        res.status(500).json({ message: error.message });
+        console.error(`GET /directory/${req.params.id} error:`, error);
+        res.status(500).json({ message: 'Server Error' });
     }
 });
 
-// POST a new directory entry
-router.post('/', async (req, res) => {
-    const directory = new Directory({
-        employeeId: req.body.employeeId,
-        status: req.body.status,
-        position: req.body.position,
-        photo: req.body.photo,
-        email: req.body.email,
-        location: req.body.location,
-        contact: req.body.contact,
-        birthday: req.body.birthday,
-    });
-
+// POST a new directory entry with photo upload
+router.post('/', upload.single('photo'), async (req, res) => {
     try {
+        const { employeeId, status, email, location, contact, birthday } = req.body;
+        let photoUrl = '';
+        let photoPublicId = '';
+
+        if (req.file) {
+            photoUrl = req.file.path; // Cloudinary returns the URL in `path`
+            photoPublicId = req.file.filename; // Cloudinary public ID
+            console.log('Uploaded photo URL:', photoUrl);
+            console.log('Uploaded photo public_id:', photoPublicId);
+        }
+
+        const directory = new Directory({
+            employeeId,
+            status,
+            photo: photoUrl,
+            photo_public_id: photoPublicId,
+            email,
+            location,
+            contact,
+            birthday,
+        });
+
         const newDirectory = await directory.save();
         res.status(201).json(newDirectory);
     } catch (error) {
-        res.status(400).json({ message: error.message });
+        console.error('POST /directory error:', error);
+        res.status(400).json({ message: 'Bad Request' });
     }
 });
 
-// Other CRUD routes (PUT, DELETE) can be added similarly
+// PUT update a directory entry (including photo update)
+router.put('/:id', upload.single('photo'), async (req, res) => {
+    try {
+        const directory = await Directory.findById(req.params.id);
+        if (!directory) return res.status(404).json({ message: 'Directory entry not found' });
+
+        const { employeeId, status, email, location, contact, birthday } = req.body;
+
+        if (employeeId) directory.employeeId = employeeId;
+        if (status) directory.status = status;
+        if (email) directory.email = email;
+        if (location) directory.location = location;
+        if (contact) directory.contact = contact;
+        if (birthday) directory.birthday = birthday;
+
+        if (req.file) {
+            // Delete old photo from Cloudinary if exists
+            if (directory.photo_public_id) {
+                await cloudinary.uploader.destroy(directory.photo_public_id);
+                console.log('Deleted old photo with public_id:', directory.photo_public_id);
+            }
+
+            // Update with new photo URL and public_id
+            directory.photo = req.file.path; // New photo URL
+            directory.photo_public_id = req.file.filename; // New photo public_id
+            console.log('Uploaded new photo URL:', directory.photo);
+            console.log('Uploaded new photo public_id:', directory.photo_public_id);
+        }
+
+        const updatedDirectory = await directory.save();
+        res.status(200).json(updatedDirectory);
+    } catch (error) {
+        console.error(`PUT /directory/${req.params.id} error:`, error);
+        res.status(400).json({ message: 'Bad Request' });
+    }
+});
+
+// DELETE a directory entry
+router.delete('/:id', async (req, res) => {
+    try {
+        const directory = await Directory.findById(req.params.id);
+        if (!directory) return res.status(404).json({ message: 'Directory entry not found' });
+
+        // Delete the image from Cloudinary if exists
+        if (directory.photo_public_id) {
+            await cloudinary.uploader.destroy(directory.photo_public_id);
+            console.log('Deleted photo with public_id:', directory.photo_public_id);
+        }
+
+        await directory.remove();
+        res.status(200).json({ message: 'Directory entry deleted successfully' });
+    } catch (error) {
+        console.error(`DELETE /directory/${req.params.id} error:`, error);
+        res.status(500).json({ message: 'Server Error' });
+    }
+});
 
 module.exports = router;
