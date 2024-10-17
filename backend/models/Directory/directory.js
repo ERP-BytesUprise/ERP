@@ -1,9 +1,8 @@
-// backend/models/Directory/directory.js
 const mongoose = require('mongoose');
 
 const directorySchema = new mongoose.Schema({
     employeeId: { 
-        type: mongoose.Schema.Types.ObjectId, // Reference to Employee
+        type: mongoose.Schema.Types.ObjectId, 
         required: true, 
         ref: 'Employee' 
     },
@@ -13,18 +12,19 @@ const directorySchema = new mongoose.Schema({
         required: true 
     },
     photo: { 
-        type: String, // Photo URL
+        type: String, 
+        default: 'https://res.cloudinary.com/dtfmiz4xb/image/upload/v1729132696/profile_photo_enxxia.avif' // Default image URL
     },
     photo_public_id: { 
-        type: String, // Cloudinary public ID
+        type: String, 
     },
     email: { 
         type: String, 
         required: true 
-    }, // Email
-    location: { type: String }, // Location
-    contact: { type: String }, // Contact number
-    birthday: { type: Date }, // Birthday
+    },
+    location: { type: String },
+    contact: { type: String },
+    birthday: { type: Date },
 });
 
 const Directory = mongoose.model('Directory', directorySchema);

@@ -1,4 +1,3 @@
-// backend/routes/directory.js
 const express = require('express');
 const router = express.Router();
 const Directory = require('../models/Directory/directory'); // Import Directory model
@@ -18,6 +17,9 @@ const storage = new CloudinaryStorage({
 
 // Initialize Multer with Cloudinary Storage
 const upload = multer({ storage });
+
+// Default photo URL
+const defaultPhotoUrl = 'https://res.cloudinary.com/dtfmiz4xb/image/upload/v1729132696/profile_photo_enxxia.avif'; // Replace with actual default image URL
 
 // GET all directory entries
 router.get('/', async (req, res) => {
@@ -42,13 +44,14 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-// POST a new directory entry with photo upload
+// POST a new directory entry with photo upload or default image
 router.post('/', upload.single('photo'), async (req, res) => {
     try {
         const { employeeId, status, email, location, contact, birthday } = req.body;
-        let photoUrl = '';
-        let photoPublicId = '';
+        let photoUrl = defaultPhotoUrl; // Default image URL
+        let photoPublicId = ''; // Leave public ID blank for default image
 
+        // If a photo is uploaded, replace the default with Cloudinary URL
         if (req.file) {
             photoUrl = req.file.path; // Cloudinary returns the URL in `path`
             photoPublicId = req.file.filename; // Cloudinary public ID
@@ -75,7 +78,7 @@ router.post('/', upload.single('photo'), async (req, res) => {
     }
 });
 
-// PUT update a directory entry (including photo update)
+// PUT update a directory entry (including photo update or using default image)
 router.put('/:id', upload.single('photo'), async (req, res) => {
     try {
         const directory = await Directory.findById(req.params.id);
@@ -90,6 +93,7 @@ router.put('/:id', upload.single('photo'), async (req, res) => {
         if (contact) directory.contact = contact;
         if (birthday) directory.birthday = birthday;
 
+        // Handle photo updates
         if (req.file) {
             // Delete old photo from Cloudinary if exists
             if (directory.photo_public_id) {
@@ -102,6 +106,9 @@ router.put('/:id', upload.single('photo'), async (req, res) => {
             directory.photo_public_id = req.file.filename; // New photo public_id
             console.log('Uploaded new photo URL:', directory.photo);
             console.log('Uploaded new photo public_id:', directory.photo_public_id);
+        } else if (!directory.photo) {
+            // If no new photo is uploaded and no existing photo, use the default image
+            directory.photo = defaultPhotoUrl;
         }
 
         const updatedDirectory = await directory.save();
