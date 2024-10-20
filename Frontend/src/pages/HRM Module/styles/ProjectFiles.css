@@ -1,0 +1,178 @@
+/* Container for main dashboard */
+.Filescontainer {
+    height: 68vh;
+}
+
+.WithNav {
+    padding: 10px;
+    margin-right: 20px;
+    background-color: #F5F5F5;
+    border-radius: 10px;
+    margin-left: 320px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+
+
+/* Switch and Download Area */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    /* Spacing between switch and download button */
+}
+
+/* Download button styling */
+.download-button {
+    border: none;
+    background-color: #F5F5F5;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-right: 40px;
+}
+
+.download-button:hover {
+    background-color: #dedede;
+}
+
+/* Action bar styling */
+.action-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.add-file-button {
+    background-color: #534FEB;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    /* For proper positioning of the icon */
+    margin-right: auto;
+    /* Allows the toggle and arrow to align on the right */
+}
+
+.search-input {
+    padding: 8px 30px 8px 30px;
+    /* Added padding to the left for the icon */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 10px;
+    color: #000000;
+    font-size: 16px;
+    pointer-events: none;
+    /* Make the icon unclickable */
+}
+
+/* Toggle Button and Download Icon (Right Corner) */
+.toggle-download {
+    display: flex;
+    gap: 10px;
+
+}
+
+.gridlist {
+    display: flex;
+    border: 2px solid #534FEB;
+    border-radius: 5px;
+}
+
+.Gridbtn,
+.Listbtn {
+    border-radius: 3px;
+    border: none;
+    background-color: #FFFFFF;
+    cursor: pointer;
+}
+
+.Gridbtn:hover,
+.Listbtn:hover {
+    border: none;
+    background-color: #e0e0e0;
+}
+
+.Gridbtn.active {
+    background-color: #534FEB;
+}
+
+.Listbtn.active {
+    background-color: #534FEB;
+}
+
+/* Files section */
+.files-section {
+    margin-top: 20px;
+    height: 60vh;
+    overflow-y: auto;
+}
+
+.files-grid {
+    display: flex;
+    gap: 20px;
+}
+
+.files-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.files-list .file-card {
+    margin-top: 15px;
+    height: 100px;
+    border: 2px solid #534FEB;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.files-list .file-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 15px;
+}
+
+.files-list .ImageName {
+    padding: 0;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+
+.files-grid .ImageName {
+    text-align: center;
+    width: 100%;
+    border-radius: 10px;
+    padding-top: 5px;
+    padding-bottom: 4px;
+}
+
+.file-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+}
+
+.files-grid .file-image {
+    max-width: 100%;
+    max-height: 80%;
+    border-radius: 10px;
+}

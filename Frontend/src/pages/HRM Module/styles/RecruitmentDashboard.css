@@ -1,5 +1,41 @@
+.blur-background {
+    filter: blur(10px);
+    transition: filter 0.1s;
+    overflow-x: hidden;
+}
+
+.form-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.RecrBar {
+    margin-top: 10px;
+    margin-left: 320px;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 20px;
+}
+
+.RecrBar .search {
+    padding: 10px;
+    border-radius: 5px;
+    border-color: #A1A1A1;
+}
+
+.RecrBar .NewJobBtn {
+    border-radius: 10px;
+    padding: 0 20px;
+    background-color: #534FEB;
+    color: #FFFFFF;
+    cursor: pointer;
+    border: none;
+}
+
 .Recuritmentemployees-list {
-    margin-top: 20px;
     margin-left: 300px;
     display: flex;
     flex-wrap: wrap;
@@ -7,20 +43,24 @@
     gap: 10px;
     padding: 15px 5px;
     border-radius: 10px;
+    z-index: 1;
 }
 
 .Recuritment-card {
-    width: 300px;
+    width: 240px;
     margin-bottom: 20px;
     background-color: #F5F5F5;
     border-radius: 10px;
     padding: 20px;
     position: relative;
+    cursor: pointer;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    ;
 
 }
 
 .RecuritmentDate {
-    font-size: 14px;
+    font-size: 12px;
     border: 2px solid #A1A1A1;
     padding: 5px;
     color: #414141;

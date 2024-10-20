@@ -11,7 +11,7 @@ const CreateAccountPage2 = () => {
     name: "",
     company: "",
     size: "",
-    role: "",
+    role: "Admin",
     phcode: "",
     phnumber: "",
     country: "",
@@ -134,10 +134,9 @@ const CreateAccountPage2 = () => {
               <input
                 type="text"
                 name="role"
-                value={formData.role}
+                value="Admin"
                 onChange={handleInputChange}
-                placeholder="Eg. Manager"
-                required
+                readOnly
               />
             </label>
 
@@ -204,7 +203,7 @@ const CreateAccountPage2 = () => {
           </div>
 
           <p className="Proceed">
-            By proceeding, you agree to the
+            By proceeding, you agree to the{" "}
             <a className="terms" href="#Terms">
               Terms and Service
             </a>
