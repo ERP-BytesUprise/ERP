@@ -7,16 +7,16 @@ const directorySchema = new mongoose.Schema({
         ref: 'Employee' 
     },
     status: { 
-        type: String,  
+        type: String, 
         enum: ['Active', 'Inactive'], 
         required: true 
     },
     photo: { 
         type: String, 
-        default: 'https://res.cloudinary.com/dtfmiz4xb/image/upload/v1729132696/profile_photo_enxxia.avif' // Default image URL
+        default: 'https://res.cloudinary.com/dtfmiz4xb/image/upload/v1729132696/profile_photo_enxxia.avif'
     },
     photo_public_id: { 
-        type: String, 
+        type: String 
     },
     email: { 
         type: String, 

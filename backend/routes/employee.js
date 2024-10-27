@@ -1,8 +1,8 @@
 const express = require('express');
+const Employee = require('../models/Employee/Employee'); // Ensure this is the correct path
 const router = express.Router();
-const Employee = require('../models/Employee/Employee'); // Import the Employee model
 
-// GET all employees
+// Get all employees
 router.get('/', async (req, res) => {
     try {
         const employees = await Employee.find();
@@ -12,70 +12,34 @@ router.get('/', async (req, res) => {
     }
 });
 
-// GET a specific employee by ID
-router.get('/:id', async (req, res) => {
-    try {
-        const employee = await Employee.findById(req.params.id);
-        if (!employee) return res.status(404).json({ message: 'Employee not found' });
-        res.status(200).json(employee);
-    } catch (error) {
-        res.status(500).json({ message: error.message });
-    }
-});
-
-// POST a new employee
+// Add a new employee
 router.post('/', async (req, res) => {
-    const employee = new Employee({
-        employeeId: req.body.employeeId,
-        name: req.body.name,
-        role: req.body.role,
-        employmentType: req.body.employmentType,
-        status: req.body.status,
-        checkIn: req.body.checkIn,
-        checkOut: req.body.checkOut,
-        workType: req.body.workType,
-    });
-
+    const employee = new Employee(req.body);
     try {
-        const newEmployee = await employee.save();
-        res.status(201).json(newEmployee);
+        const savedEmployee = await employee.save();
+        res.status(201).json(savedEmployee);
     } catch (error) {
         res.status(400).json({ message: error.message });
     }
 });
 
-// PUT to update an employee by ID
+// Update an employee
 router.put('/:id', async (req, res) => {
     try {
-        const employee = await Employee.findById(req.params.id);
-        if (!employee) return res.status(404).json({ message: 'Employee not found' });
-
-        // Update fields
-        employee.name = req.body.name || employee.name;
-        employee.role = req.body.role || employee.role;
-        employee.employmentType = req.body.employmentType || employee.employmentType;
-        employee.status = req.body.status || employee.status;
-        employee.checkIn = req.body.checkIn || employee.checkIn;
-        employee.checkOut = req.body.checkOut || employee.checkOut;
-        employee.workType = req.body.workType || employee.workType;
-
-        const updatedEmployee = await employee.save();
+        const updatedEmployee = await Employee.findByIdAndUpdate(req.params.id, req.body, { new: true });
         res.status(200).json(updatedEmployee);
     } catch (error) {
         res.status(400).json({ message: error.message });
     }
 });
 
-// DELETE an employee by ID
+// Delete an employee
 router.delete('/:id', async (req, res) => {
     try {
-        const employee = await Employee.findById(req.params.id);
-        if (!employee) return res.status(404).json({ message: 'Employee not found' });
-
-        await employee.remove();
-        res.status(200).json({ message: 'Employee deleted successfully' });
+        await Employee.findByIdAndDelete(req.params.id);
+        res.status(204).send();
     } catch (error) {
-        res.status(500).json({ message: error.message });
+        res.status(400).json({ message: error.message });
     }
 });
 
