@@ -27,6 +27,7 @@ const directorySchema = new mongoose.Schema({
     birthday: { type: Date },
 });
 
-const Directory = mongoose.model('Directory', directorySchema);
+// Check if the model already exists to avoid overwriting
+const Directory = mongoose.models.Directory || mongoose.model('Directory', directorySchema);
 
 module.exports = Directory;
